@@ -214,10 +214,8 @@ class Boss(AnimatedEntity):
     def draw(self):
         if self.is_flashing > 0:
             screen.draw.filled_rect(self.rect, "red")
-        # Se tem imagens, desenha o boss normal
         elif self.has_images:
             self.actor.draw()
-        # Se NÃO tem imagens, desenha AZUL (Garante que você veja o boss correto)
         else:
             screen.draw.filled_rect(self.rect, "blue")
 
@@ -246,8 +244,11 @@ def start_game():
     boss = None
     boss_projectiles = []
     player = Player(100, 400)
+
+    if sound_enabled:
+        music.play("music") 
+        music.set_volume(0.5)
     
-    # Level 1
     level_platforms = [Rect(0, 500, 800, 100), Rect(200, 400, 150, 20),
                        Rect(450, 300, 150, 20), Rect(100, 200, 100, 20)]
     enemies = [Enemy(250, 360, 50), Enemy(500, 260, 60), Enemy(400, 460, 100)]
@@ -265,7 +266,18 @@ def setup_level_two():
 def toggle_sound():
     global sound_enabled
     sound_enabled = not sound_enabled
+    
     buttons[1].text = "Som: Ligado" if sound_enabled else "Som: Desligado"
+
+    if sound_enabled:
+        if game_state == "GAME":
+            try: 
+                music.play("music")
+                music.set_volume(0.5)
+            except: pass
+    else:
+        try: music.stop()
+        except: pass
 
 def exit_game():
     exit()
