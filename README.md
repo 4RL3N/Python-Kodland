@@ -4,7 +4,7 @@
 
 ## 📋 Sobre o Projeto
 
-Este jogo foi desenvolvido respeitando rigorosamente os requisitos técnicos definidos:
+Eu desenvolvi esse jogo respeitando rigorosamente os requisitos técnicos definidos:
 * **Gênero:** Platformer (visão lateral com gravidade e pulo).
 * **Bibliotecas:** Uso restrito a `pgzero`, `math` e `random`.
 * **Estrutura:** Código limpo (PEP8), uso de Classes para Entidades, Jogador e Inimigos.
@@ -16,7 +16,7 @@ Este jogo foi desenvolvido respeitando rigorosamente os requisitos técnicos def
 
 ## 🎮 Como Jogar
 
-O objetivo é simples: atravesse as plataformas, derrote os inimigos e vença o Boss final.
+O objetivo é bem simples: atravesse as plataformas, derrotar os inimigos e vençer o Boss final.
 
 * **Mecânica de Combate:** Assim como nos clássicos jogos de plataforma, para derrotar um inimigo ou o Boss, você deve **pular na cabeça deles** enquanto estiver caindo.
 * **Vidas:** O jogador começa com 3 vidas.
@@ -55,14 +55,16 @@ python -m pgzrun main.py
 ## Estrutura do Código
 O projeto é contido em um arquivo principal (```main.py```) e pastas de recursos, seguindo a arquitetura que foi exigida:
 
-- ´´´ AnimatedEntity´´´: Classe base que vai fazer o gerencimento da lógica da animação de sprites (a troca ciclica de imagens, para dar um ar mais refinado ao jogo);
+- ```AnimatedEntity```: Classe base que vai fazer o gerencimento da lógica da animação de sprites (a troca ciclica de imagens, para dar um ar mais refinado ao jogo);
 
-- ´´´Player´´´: Controla a física, o input do usuário e a gravidade;
+- ```Player```: Controla a física, o input do usuário e a gravidade;
 
-- ´´´Enemy´´´: IA simples de patrulha;
+- ```Enemy```: IA simples de patrulha;
 
-- ´´´Boss´´´: IA de combate com projéteis (adorei codar isso haha);
+- ```Boss```: IA de combate com projéteis (adorei codar isso haha);
 
-- ´´´Button´´´: Classe unitária para os botões no menu;
+- ```Button```: Classe unitária para os botões no menu;
 
 OBS.: O jogo requer que as pastas imagens/ e sounds/ estejam no mesmo diretório do sctipt principal, para que sejam carregadas as imagens e os sons.
+
+Desenvolvido em Python com PgZero.
